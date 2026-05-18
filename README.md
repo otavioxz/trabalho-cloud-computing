@@ -1,4 +1,4 @@
-# 📰 News Blog App
+# News Blog App
 
 O News Blog App é uma aplicação web CRUD de notícias e blogs desenvolvida utilizando Node.js, Express e PostgreSQL.
 
@@ -78,7 +78,7 @@ Antes de executar o projeto é necessário possuir instalado:
 # Clonar o Repositório
 
 ```bash
-git clone LINK_DO_REPOSITORIO
+git clone [LINK_DO_REPOSITORIO](https://github.com/otavioxz/trabalho-cloud-computing.git)
 ```
 
 ---
@@ -138,19 +138,17 @@ http://localhost:3000
 
 # Containers Utilizados
 
-| Container | Função |
-|-------|
-| news_app | Aplicação Node.js |
-| news_db | Banco PostgreSQL |
+Container: 
+- news_db (Banco PostgreSQL)
+- news_app (Aplicação Node.js)
 
 ---
 
 # Portas Utilizadas
 
-| Serviço | Porta |
-|-------|
-| Aplicação | 3000 |
-| PostgreSQL | 5432 |
+Serviço:
+- Aplicação: porta 3000
+- PostgreSQL: porta 5432
 
 ---
 
