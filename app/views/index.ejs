@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Blog</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="topbar">
+            <div>
+                <h1>📰 News Blog</h1>
+                <p class="subtitle">
+                    Portal de notícias e publicações
+                </p>
+            </div>
+
+            <a href="/create" class="btn-primary">
+                + Nova Notícia
+            </a>
+        </div>
+
+        <% if (noticias.length === 0) { %>
+
+            <div class="empty-state">
+                <h2>Nenhuma notícia cadastrada</h2>
+                <p>
+                    Clique em "Nova Notícia" para criar a primeira publicação.
+                </p>
+            </div>
+
+        <% } %>
+
+        <div class="grid">
+
+            <% noticias.forEach(noticia => { %>
+
+                <div class="card">
+
+                    <div class="card-header">
+                        <span class="badge">
+                            Notícia
+                        </span>
+                    </div>
+
+                    <h2><%= noticia.titulo %></h2>
+
+                    <p class="content">
+                        <%= noticia.conteudo %>
+                    </p>
+
+                    <div class="card-footer">
+
+                        <small>
+                            ✍️ <%= noticia.autor %>
+                        </small>
+
+                        <div class="actions">
+
+                            <a href="/edit/<%= noticia.id %>" class="edit">
+                                Editar
+                            </a>
+
+                            <form action="/delete/<%= noticia.id %>?_method=DELETE" method="POST">
+
+                                <button type="submit" class="delete">
+                                    Excluir
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            <% }) %>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
